@@ -1,66 +1,109 @@
 ---
-
-import '../styles/global.css'
 import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Skills from '../components/Skills.astro';
 
-
-const nama = "Ebie Aryansya";
-const prodi = "Informatika UNP";
-const posts = await getCollection('blog');
-
+let posts = [];
+try {
+  posts = await getCollection('blog');
+} catch (e) {}
+const latestPosts = posts ? posts.slice(0, 3) : [];
 ---
 
-<html lang="id">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Blog {nama}</title>
-	</head>
-	<body class="bg-slate-950 text-white font-sans selection:bg-orange-500 selection:text-white">
-		<main class="min-h-screen flex items-center justify-center p-6">
-			<div class="max-w-md w-full bg-slate-900 border border-slate-800 p-8 rounded-3xl shadow-2xl transform hover:scale-105 transition-all duration-300">
-				<!-- Header -->
-				<div class="flex items-center space-x-4 mb-6">
-					<div class="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center font-bold text-xl">
-						{nama.charAt(0)}
-					</div>
-					<div>
-						<h1 class="text-2xl font-black tracking-tight text-white uppercase">{nama}</h1>
-						<p class="text-orange-500 text-xs font-bold tracking-widest">{prodi}</p>
-					</div>
-				</div>
-
-				<!-- Content -->
-				<div class="space-y-4">
-					<p class="text-slate-400 leading-relaxed">
-						Selamat datang di blog pertama saya! Sedang belajar <span class="text-white font-mono bg-slate-800 px-1">Astro</span> dan <span class="text-white font-mono bg-slate-800 px-1">Tailwind CSS</span> untuk portofolio kedepannya.
-					</p>
-					
-					<div class="pt-4 flex flex-wrap gap-2">
-						<span class="bg-slate-800 text-slate-300 text-[10px] px-2 py-1 rounded-md border border-slate-700">Asus TUF A16</span>
-						<span class="bg-slate-800 text-slate-300 text-[10px] px-2 py-1 rounded-md border border-slate-700">Windows 11</span>
-						<span class="bg-slate-800 text-slate-300 text-[10px] px-2 py-1 rounded-md border border-slate-700">Semester 2</span>
-					</div>
-				</div>
-
-				<!-- Footer -->
-				<div class="mt-8 pt-6 border-t border-slate-800 text-center">
-					<button class="bg-white text-black font-bold py-2 px-6 rounded-full text-sm hover:bg-orange-500 hover:text-white transition-colors uppercase tracking-widest">
-						Baca Artikel
-					</button>
-				</div>
-
-					<div class="mt-6 space-y-2 text-left">
-					<h3 class="text-xs font-bold text-slate-500 uppercase tracking-widest">Artikel Terbaru</h3>
-					{posts.map((post : any) => (
-							<a href={`/blog/${post.id}`} class="block p-3 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors border border-slate-700">
-							<h4 class="text-sm font-semibold">{post.data.title}</h4>
-							<p class="text-xs text-slate-400">{post.data.description}</p>
-							</a>
-					))}
-					</div>
+<BaseLayout>
+	<Hero />
+	<Skills />
+	
+	<!-- Featured Projects Placeholder -->
+	<section class="py-20 border-t border-border">
+		<div class="mb-12 flex items-end justify-between">
+			<div>
+				<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">Featured Projects</h2>
+				<p class="text-gray max-w-2xl">Beberapa project pilihan yang pernah saya kerjakan.</p>
 			</div>
-		</main>
-	</body>
-</html>
+			<a href="/projects" class="text-primary font-medium hover:text-primary-dark transition-colors flex items-center gap-2">
+				Lihat Semua
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+			</a>
+		</div>
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+			<div class="group rounded-[24px] overflow-hidden bg-surface border border-border shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_30px_rgba(255,122,0,0.08)] transition-all duration-300">
+				<div class="aspect-video bg-surface-hover relative overflow-hidden">
+					<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+				</div>
+				<div class="p-8">
+					<h3 class="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">KostKita</h3>
+					<p class="text-gray mb-6 line-clamp-2">Platform pencarian kost modern yang memudahkan mahasiswa mencari tempat tinggal.</p>
+					<div class="flex flex-wrap gap-2 mb-6">
+						<span class="px-3 py-1 bg-gray/5 text-xs font-medium rounded-md">Laravel</span>
+						<span class="px-3 py-1 bg-gray/5 text-xs font-medium rounded-md">Tailwind</span>
+						<span class="px-3 py-1 bg-gray/5 text-xs font-medium rounded-md">MySQL</span>
+					</div>
+				</div>
+			</div>
+			<div class="group rounded-[24px] overflow-hidden bg-surface border border-border shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_30px_rgba(255,122,0,0.08)] transition-all duration-300">
+				<div class="aspect-video bg-surface-hover relative overflow-hidden">
+					<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+				</div>
+				<div class="p-8">
+					<h3 class="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">Sistem Akademik</h3>
+					<p class="text-gray mb-6 line-clamp-2">Sistem manajemen akademik untuk mempermudah administrasi sekolah dengan fitur lengkap.</p>
+					<div class="flex flex-wrap gap-2 mb-6">
+						<span class="px-3 py-1 bg-gray/5 text-xs font-medium rounded-md">PHP</span>
+						<span class="px-3 py-1 bg-gray/5 text-xs font-medium rounded-md">Bootstrap</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Latest Blog Posts -->
+	<section class="py-20 border-t border-border">
+		<div class="mb-12 flex items-end justify-between">
+			<div>
+				<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">Latest Blog Posts</h2>
+				<p class="text-gray max-w-2xl">Tulisan terbaru seputar teknologi dan web development.</p>
+			</div>
+			<a href="/blog" class="text-primary font-medium hover:text-primary-dark transition-colors flex items-center gap-2">
+				Lihat Semua
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+			</a>
+		</div>
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+			{latestPosts.map((post: any) => (
+				<a href={`/blog/${post.id}`} class="group p-6 rounded-[24px] bg-surface border border-border shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_30px_rgba(255,122,0,0.08)] transition-all duration-300 hover:-translate-y-1 block flex flex-col h-full">
+					<h3 class="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors line-clamp-2">{post.data.title}</h3>
+					<p class="text-gray mb-6 line-clamp-3 text-sm flex-grow">{post.data.description}</p>
+					<div class="text-xs font-medium text-gray/60 uppercase tracking-wider mt-auto">
+						{post.data.pubDate ? new Date(post.data.pubDate).toLocaleDateString('id-ID', {
+							year: 'numeric',
+							month: 'long',
+							day: 'numeric'
+						}) : 'Terbaru'}
+					</div>
+				</a>
+			))}
+			{latestPosts.length === 0 && (
+				<p class="text-gray col-span-full">Belum ada postingan blog.</p>
+			)}
+		</div>
+	</section>
+
+	<!-- CTA Section -->
+	<section class="py-20 mt-10 rounded-[32px] bg-surface text-foreground border border-border relative overflow-hidden">
+		<!-- Decor elements -->
+		<div class="absolute top-0 right-0 w-96 h-96 bg-primary/20 blur-[100px] rounded-full"></div>
+		<div class="absolute bottom-0 left-0 w-64 h-64 bg-primary-soft/10 blur-[80px] rounded-full"></div>
+		
+		<div class="relative z-10 text-center px-6 max-w-2xl mx-auto">
+			<h2 class="text-3xl md:text-5xl font-bold text-foreground mb-6">Mari berkolaborasi!</h2>
+			<p class="text-gray/80 text-lg mb-10">
+				Saya selalu terbuka untuk mendiskusikan project baru, ide kreatif, atau peluang bekerja sama.
+			</p>
+			<a href="mailto:email@example.com" class="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-primary text-white font-medium hover:bg-primary-dark transition-all hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-1">
+				Hubungi Saya
+			</a>
+		</div>
+	</section>
+</BaseLayout>
