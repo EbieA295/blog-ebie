@@ -29,7 +29,7 @@ const skills = [
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
     {skills.map(skillGroup => (
-      <div class="p-6 rounded-[24px] bg-surface border border-border hover:border-primary/30 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_30px_rgba(255,122,0,0.08)] transition-all duration-300 hover:-translate-y-1">
+      <div class="p-6 rounded-3xl bg-surface border border-border hover:border-primary/30 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_30px_rgba(255,122,0,0.08)] transition-all duration-300 hover:-translate-y-1">
         <h3 class="text-xl font-bold text-foreground mb-4">{skillGroup.category}</h3>
         <div class="flex flex-wrap gap-2">
           {skillGroup.items.map(item => (

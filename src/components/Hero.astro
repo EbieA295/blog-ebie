@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import fotoEbie from '../assets/fotome.jpeg'; // 💡 Pastikan foto kamu ditaruh di folder src/assets/ dengan nama ebie.png (atau sesuaikan ekstensinya)
 ---
 
 <section class="min-h-[80vh] flex flex-col md:flex-row items-center justify-between gap-12 py-10">
@@ -28,17 +30,19 @@
   </div>
   
   <div class="flex-1 relative flex justify-center items-center w-full max-w-md">
-    <!-- Glow Effects -->
     <div class="absolute inset-0 bg-primary/20 blur-[80px] rounded-full mix-blend-multiply"></div>
-    <div class="absolute inset-4 bg-primary-soft blur-[40px] rounded-full"></div>
+    <div class="absolute inset-4 bg-primary-soft blur-2xl rounded-full"></div>
     
-    <!-- Image/Avatar container -->
-    <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-[2rem] bg-gradient-to-tr from-primary to-primary-soft p-1 rotate-3 hover:rotate-0 transition-all duration-500 shadow-xl">
+    <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-4xl bg-linear-to-tr from-primary to-primary-soft p-1 rotate-3 hover:rotate-0 transition-all duration-500 shadow-xl overflow-hidden group">
       <div class="w-full h-full rounded-[1.8rem] bg-surface overflow-hidden">
-        <!-- Placeholder for actual image -->
-        <div class="w-full h-full bg-surface-hover/50 flex items-center justify-center text-gray font-medium">
-          Foto Ebie
-        </div>
+        
+        <Image 
+          src={fotoEbie} 
+          alt="Foto Ebie" 
+          loading="eager"
+          class="w-full h-full object-cover object-center -rotate-3 group-hover:rotate-0 scale-110 group-hover:scale-105 transition-all duration-500"
+        />
+
       </div>
     </div>
   </div>

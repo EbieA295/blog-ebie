@@ -1,0 +1,157 @@
+---
+// src/pages/about.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About Me - Brother.dev">
+  <main class="min-h-screen bg-[#0d0e12] text-zinc-300 antialiased selection:bg-orange-500 selection:text-white">
+    <div class="max-w-3xl mx-auto px-6 py-16 sm:py-24">
+      
+      <header class="space-y-3 border-b border-zinc-800 pb-8 mb-10">
+        <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white">
+          About Me
+        </h1>
+        <p class="text-lg sm:text-xl text-zinc-400 font-medium flex items-center gap-2">
+          Halo! Saya Ebie Aryansya <span class="animate-pulse">👋</span>
+        </p>
+      </header>
+      
+      <section class="space-y-6 text-zinc-300 leading-relaxed text-base sm:text-lg">
+        <p>
+          Perjalanan saya di dunia IT sebenarnya dimulai dari sebuah <em class="text-zinc-100">"plot twist"</em> yang tidak terduga. Awalnya, fokus utama minat saya berada di bidang teknik elektro. Namun, takdir berkata lain ketika saya iseng memilih jurusan <span class="text-white font-semibold border-b-2 border-orange-500/40">Informatika</span> pada SNBT April 2025 lalu, dan ternyata dinyatakan lulus di <span class="text-white font-semibold">Universitas Negeri Padang</span>.
+        </p>
+        <p>
+          Mensingpun awalnya tidak direncanakan, bagi saya ini adalah sebuah tantangan baru. Begitu tercebur di bidang ini, prinsip saya cuma satu: <strong class="text-white">saya akan mendalami bidang Informatika ini sampai sedalam mungkin</strong>. Sekarang, saya sangat menikmati proses menerjemahkan logika menjadi baris-baris kode yang hidup.
+        </p>
+        <p>
+          Di luar kesibukan kuliah dan <em class="text-zinc-100">ngoding</em>, saya adalah seorang yang suka bermain <em class="text-zinc-100">game</em>. Dari hobi ini juga, rasa penasaran saya tentang bagaimana teknologi di balik layar sebuah perangkat lunak bekerja terus tumbuh.
+        </p>
+      </section>
+
+      <section class="mt-12 pt-10 border-t border-zinc-800">
+        <h2 class="text-2xl font-bold text-white tracking-tight mb-6 flex items-center gap-2">
+          <span class="h-2 w-2 rounded-full bg-orange-500"></span> Tech Stack & Skills
+        </h2>
+        
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="p-5 rounded-xl bg-zinc-900/50 border border-zinc-800/80 hover:border-zinc-700 transition-colors">
+            <h3 class="font-semibold text-orange-400 mb-2 text-sm uppercase tracking-wider">Frontend</h3>
+            <p class="text-zinc-300 text-sm leading-relaxed">HTML, CSS, JavaScript, Astro, Tailwind CSS</p>
+          </div>
+
+          <div class="p-5 rounded-xl bg-zinc-900/50 border border-zinc-800/80 hover:border-zinc-700 transition-colors">
+            <h3 class="font-semibold text-orange-400 mb-2 text-sm uppercase tracking-wider">Keahlian Lain</h3>
+            <p class="text-zinc-300 text-sm leading-relaxed">Analisis Data, Logika Pemrograman Dasar</p>
+          </div>
+
+          <div class="p-5 rounded-xl bg-zinc-900/50 border border-zinc-800/80 hover:border-zinc-700 transition-colors sm:col-span-2">
+            <h3 class="font-semibold text-orange-400 mb-2 text-sm uppercase tracking-wider">Interests</h3>
+            <p class="text-zinc-300 text-sm leading-relaxed">Web Development, Cybersecurity, Gaming, and Hardware Exploration.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-12 pt-10 border-t border-zinc-800">
+        <h2 class="text-2xl font-bold text-white tracking-tight mb-6 flex items-center gap-2">
+          <span class="h-2 w-2 rounded-full bg-green-500 animate-pulse"></span> What I'm Up To Now
+        </h2>
+        
+        <div class="bg-zinc-900/40 border border-zinc-800/60 rounded-xl p-6 space-y-4 text-base">
+          <div class="flex items-start gap-4">
+            <span class="text-xl p-2 bg-zinc-800/60 rounded-lg shrink-0">📚</span>
+            <div>
+              <h4 class="font-semibold text-white text-sm sm:text-base">Sedang Kuliah</h4>
+              <p class="text-zinc-400 text-sm mt-0.5">Mahasiswa Semester 2 di Universitas Negeri Padang. Saat ini sedang fokus mendalami mata kuliah <strong>Struktur Data</strong> dan <strong>Sistem Basis Data</strong>.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 border-t border-zinc-800/60 pt-4">
+            <span class="text-xl p-2 bg-zinc-800/60 rounded-lg shrink-0">💻</span>
+            <div>
+              <h4 class="font-semibold text-white text-sm sm:text-base">Proyek Saat Ini</h4>
+              <p class="text-zinc-400 text-sm mt-0.5">Sedang membangun aplikasi manajemen persewaan web bernama <span class="text-orange-400 font-medium">KostKita</span> menggunakan framework <strong>Laravel</strong> untuk mengasah logika backend dan arsitektur database.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 border-t border-zinc-800/60 pt-4">
+            <span class="text-xl p-2 bg-zinc-800/60 rounded-lg shrink-0">🎮</span>
+            <div>
+              <h4 class="font-semibold text-white text-sm sm:text-base">Game yang Lagi Dimainkan</h4>
+              <p class="text-zinc-400 text-sm mt-0.5">Menyisihkan sedikit waktu di akhir pekan untuk menyegarkan pikiran lewat game seperti <strong>Resident Evil 4</strong> atau sesekali push rank di <strong>Valorant</strong>.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-12 pt-10 border-t border-zinc-800">
+        <h2 class="text-2xl font-bold text-white tracking-tight mb-6 flex items-center gap-2">
+          <span class="h-2 w-2 rounded-full bg-blue-500"></span> My Workstation
+        </h2>
+        <div class="grid gap-4 sm:grid-cols-3 text-sm">
+          <div class="p-4 rounded-xl bg-zinc-900/30 border border-zinc-800/50">
+            <span class="text-zinc-500 font-medium block mb-1">Laptop</span>
+            <span class="text-white font-semibold">ASUS TUF Gaming A16</span>
+          </div>
+          <div class="p-4 rounded-xl bg-zinc-900/30 border border-zinc-800/50">
+            <span class="text-zinc-500 font-medium block mb-1">Environment</span>
+            <span class="text-white font-semibold">Windows 11 / Linux Mint</span>
+          </div>
+          <div class="p-4 rounded-xl bg-zinc-900/30 border border-zinc-800/50">
+            <span class="text-zinc-500 font-medium block mb-1">Primary Editor</span>
+            <span class="text-white font-semibold">VS Code (Dark Theme)</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-12 pt-10 border-t border-zinc-800">
+        <h2 class="text-2xl font-bold text-white tracking-tight mb-6 flex items-center gap-2">
+          <span class="h-2 w-2 rounded-full bg-purple-500"></span> GitHub Productivity
+        </h2>
+        <p class="text-zinc-400 text-sm mb-6">Statistik aktivitas coding nyata yang ditarik langsung dari GitHub.</p>
+        
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="bg-zinc-900/20 p-4 rounded-xl border border-zinc-800/60 flex justify-center items-center">
+            <img 
+              src="https://github-readme-stats.vercel.app/api?username=EbieA295&show_icons=true&theme=dark&hide_border=true&bg_color=0d0e12&title_color=f97316&text_color=d4d4d8&icon_color=f97316" 
+              alt="Ebie's GitHub Stats" 
+              loading="lazy"
+              class="w-full max-w-md"
+              onerror="this.onerror=null; this.src='https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=EbieA295&theme=gotham';"
+            />
+          </div>
+          
+          <div class="bg-zinc-900/20 p-4 rounded-xl border border-zinc-800/60 flex justify-center items-center">
+            <img 
+              src="https://github-readme-stats.vercel.app/api/top-langs/?username=EbieA295&layout=compact&theme=dark&hide_border=true&bg_color=0d0e12&title_color=f97316&text_color=d4d4d8" 
+              alt="Ebie's Top Languages" 
+              loading="lazy"
+              class="w-full max-w-md"
+              onerror="this.onerror=null; this.src='https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=EbieA295&theme=gotham';"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-12 pt-10 border-t border-zinc-800">
+        <h2 class="text-2xl font-bold text-white tracking-tight mb-6 flex items-center gap-2">
+          <span class="h-2 w-2 rounded-full bg-[#1DB954]"></span> Coding Vibe
+        </h2>
+        <p class="text-zinc-400 text-sm mb-4">Musik peneman ngoding larut malam ditemani segelas cold brew.</p>
+        <div class="rounded-xl overflow-hidden bg-[#121212] border border-zinc-800">
+          <iframe 
+            data-testid="embed-iframe" 
+            style="border-radius:12px" 
+            src="https://open.spotify.com/embed/playlist/37i9dQZF1GXwD9676YxI3N" 
+            width="100%" 
+            height="352" 
+            allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy"
+            class="border-0">
+          </iframe>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</BaseLayout>
